@@ -1,0 +1,48 @@
+
+  <!--<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <app-table-header [tableHeader] = "vehicleHeader"></app-table-header>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td *ngFor = "let colName  of vehicleHeader">{{colName}}</td>
+    </tr>
+    
+  </tbody>
+</table> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+             <table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <app-table-header [tableHeader] = "vehicleHeader"></app-table-header>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor = "let rowData  of vehicles" (click) = "showVehicleDetails(rowData)" style="cursor: pointer;">
+      <td>{{rowData.make}}</td>
+      <td>{{rowData.model}}</td>
+      <td>{{rowData.year}}</td>
+      <td>{{rowData.price}}</td>
+    </tr>
+    
+  </tbody>
+</table> 
+        </div>
+        
+    </div>
+     <div *ngIf="vehicleFlag==true" style="right:25%">
+    <app-vehicle-details [vehicleDetails]="rowData" ></app-vehicle-details>
+</div>
+</div>
+
+
+
+
+ 
+

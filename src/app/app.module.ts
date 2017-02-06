@@ -4,17 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { TableHeaderComponent } from './table-header/table-header.component';
+import { VehcileListComponent } from './vehcile-list/vehcile-list.component';
+import {VehicleService} from './Vehicle-list-service';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableHeaderComponent,
+    VehcileListComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [VehicleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
